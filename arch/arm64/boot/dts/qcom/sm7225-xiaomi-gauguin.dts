@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2026, DomHeadroom <domefemia@protonmail.com>
+ */
+
+/dts-v1/;
+
+#include "sm7225.dtsi"
+
+/ {
+	model = "Xiaomi Mi 10T Lite 5G";
+	compatible = "xiaomi,gauguin", "qcom,sm7225";
+	chassis-type = "handset";
+
+	/* required for bootloader to select correct board */
+	qcom,msm-id = <434 0x10000>, <459 0x10000>;
+	qcom,board-id = <0x23 0>;
+
+	
+};
