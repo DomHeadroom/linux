@@ -19,6 +19,27 @@
 	qcom,msm-id = <434 0x10000>, <459 0x10000>;
 	qcom,board-id = <35 0>;
 
+	chosen {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		framebuffer0: framebuffer@a000000 {
+			compatible = "simple-framebuffer";
+			reg = <0 0xa0000000 0 (2400 * 1080 * 4)>;
+			width = <1080>;
+			height = <2400>;
+			stride = <(1080 * 4)>;
+			format = "a8r8g8b8";
+		};
+	};
+
+	reserved-memory {
+		cont_splash_region {
+			reg = <0x00 0xa0000000 0x00 0x2300000>;
+			no-map;
+		};
+	};
 };
 
 &apps_rsc {
